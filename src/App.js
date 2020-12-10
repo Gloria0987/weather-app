@@ -1,11 +1,13 @@
 
-import React, {useState} from 'react';
+import React, {useState } from 'react';
 const api = {
   key: "8e54e17cd594c6191a0315641bd7df22",
   base: "https://api.openweathermap.org/data/2.5/"
 
 }
 function App() {
+
+
   const [query, setQuery] = useState('');
   const [weather, setWeather] =useState({});
 
@@ -26,12 +28,11 @@ const dateBuilder= (d)=>{
 
   let day = days[d.getDay ()];
   let date =d.getDate();
-  let month =months [d.getMonth()]
+  let month =months[d.getMonth()]
   let year =d.getFullYear();
 
   return `${day} ${date} ${month} ${year}`
 }
-
   return (
     <div className={
       (typeof weather.main != "undefined") ?((weather.main.temp >16) ?'app-warm':'app'):'app'}>
@@ -57,7 +58,9 @@ const dateBuilder= (d)=>{
         ): ('')}
       </main>
     </div>
+    
   );
+
 }
 
 export default App;
